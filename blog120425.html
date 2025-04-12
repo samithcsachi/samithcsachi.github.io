@@ -92,16 +92,78 @@
                                      We’re interested in extracting the salary details of each job and additional relevant features
 
                                 </p>
-                                <img src="images/thumbs/stepstone.png" alt="Stepstone Web Scrapper" title="Stepstone Web Scrapper" width="700" height="600">
+                                <img src="images/blogs/blog12042501.png" alt="Stepstone Website" title="Stepstone Website" width="" height="">
 
                                 <p>When we are searching the keyword and the city or blank. We are getting the details like “Job Title”, “Company Name,” “City,” etc. 
                                     We can get more details in a specific tab if we click the Jobs tab. So it's like humans interacting with the website. To make this happen, we need to use Selenium. Selenium gives the website a Human feeling. 
                                     It can be used to click the link, select the drop-down and move through the tabs, etc.
-
-
                                 </p>
                                 
                             </div>
+
+                            <div class="blog-textsub">
+                                <div class="blog-titlesub">What are we looking for?</div>
+                                <p>We need to have a csv file with all the details as below</p>
+                                <img src="images/blogs/blog12042504.png" alt="csv file" title="csv file" width="" height="">
+                                <p>The Python script will search all the keywords required by going through each job posting page and 
+                                    collecting all the required details in that tab and then closing each tab without any human interaction.</p>
+                                
+                            </div>
+
+                            <div class="blog-textsub">
+                                <div class="blog-titlesub">🧰 Tools and Libraries</div>
+                                <ul>
+                                    <li>Working knowledge of Python</li>
+                                    <li>Python Version 3+</li>
+                                    <li>PyCharm / VSCode / Jupyter Notebook installed</li>
+                                    <li>Basic knowledge of HTML</li>
+                                    <li>Some knowledge of XPath</li>
+                                    <li>Selenium installed</li>
+                                    <li>Chrome installed</li>
+                                  </ul>
+                             
+                            </div>
+
+                            <div class="blog-textsub">
+                                <div class="blog-titlesub">The Core Principle of Web Scraping</div>
+                                <p>It is quite simple. Let’s assume you have seen some text on the webpage and you would like to scrape it.
+                                     Elements on a web page reside in a hierarchy. 
+                                    You just need to tell your code the “address” of the element within that hierarchy.</p>
+                                
+                                <p>Let's check the Salary Range on the page. Right-click the desired item and click the inspect option to see the HTML code. 
+                                    On the left-hand top, there is an arrow mark indicating the inspect of the element. 
+                                    Just click and click on the desired element to see the code highlighted.</p>
+
+                                    <img src="images/blogs/blog12042502.png" alt="Inspecting the web page" title="Inspecting the web page" width="" height="">
+
+                                    <img src="images/blogs/blog12042503.png" alt="checking the selectors from Web page" title="checking the selectors from Web page" width="" height="">
+
+                                <p>
+                                    We are not bothered about the full code. 
+                                    We just need to see which are the selectors that we can choose and retrieve the text.
+                                     Here we have XPATH, and using XPATH, we can retrieve the text.
+
+                                </p>
+
+                                <code>
+                                    try:
+                                        salary_range = driver.find_element(By.XPATH,'//span[@data-at="salary-range"]').text
+                                    except NoSuchElementException:
+                                        salary_range = -1
+                                </code>
+                                <p>if you understand what we’re doing here. 
+                                    It means that you can easily scrape almost any website you like. 
+                                    There are many selectors that we can use similar to XPATH, like ID, CSS_SELECTOR, CLASS_NAME, etc
+
+                                </p>
+
+                                <p>
+                                    Some fields will not always be available on the website.
+                                     For Example, the Salary range, so we need to go for exception and give a fixed value.
+                                </p>
+                                
+                            </div>
+
 
 
 

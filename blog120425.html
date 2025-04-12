@@ -206,13 +206,96 @@
 
                                     time.sleep(random.uniform(2, 5))
 
+                                </code>                                                            
+                                
+                            </div>
+                            <div class="blog-textsub">
+                                <div class="blog-titlesub">🍪Accepting Cookies</div>
+                                <p>Whenever you visit the site, you need to accept the cookies. 
+                                    So have accepted the cookies using the below code.</p>
+                                <code>
+                                    Accepting the Cookies File
+                                    try:
+                                        driver.find_element(By.ID, "ccmgt_explicit_accept").click()
+                                    except NoSuchElementException:
+                                        pass
 
                                 </code>
                                 
-                                <p>The Python script will search all the keywords required by going through each job posting page and 
-                                    collecting all the required details in that tab and then closing each tab without any human interaction.</p>
                                 
                             </div>
+
+                            <div class="blog-textsub">
+                                <div class="blog-titlesub">🧱Dealing with Akamai Error</div>
+                                <p>An Akamai error typically refers to an issue encountered while using Akamai’s content delivery network (CDN) or web security services. 
+                                    Akamai is a company that provides services like content caching, website acceleration, cloud security, and DDoS protection for websites and apps.</p>
+
+                                <p>
+                                    Companies don’t like people to scrap their websites, so they are using different techniques to block the user. This is one of them.
+
+                                </p>
+                                <p>
+                                    I have used the code below to bypass the error. Also have used a few auto refresh and time sleep with random value to bypass the detention. Not sure which one helped.
+
+                                </p>
+                                <code>
+                                    # Checking for Akamai Edge Error and Skipping it.
+                                    if "Reference #" in driver.page_source and "edgesuite.net" in driver.current_url:
+                                        print("Akamai Edge error detected. Retrying once after delay...")
+                                        time.sleep(2)
+                                        driver.refresh()
+                                        WebDriverWait(driver, 10).until(
+                                            lambda d: "Reference #" not in d.page_source or "edgesuite.net" not in d.current_url)
+                                        time.sleep(random.uniform(2, 5))
+
+                                        if "Reference #" in driver.page_source:
+                                            print("Persistent Akamai error. Skipping this session.")
+                                            if len(driver.window_handles) > 1:
+                                                driver.close()
+                                                driver.switch_to.window(driver.window_handles[0])
+                                            else:
+                                                print("No secondary tab to close. Continuing.")
+
+                                </code>
+                                
+                                
+                            </div>
+                            <div class="blog-textsub">
+                                <div class="blog-titlesub">⚠️ Important Notes</div>
+                                <ul>
+                                    <li>Not recommended for large-scale scraping</li>
+                                    <li>Respect website’s Terms of Use</li>
+                                    <li>Use delays to mimic human behavior</li>
+                                  
+                                  </ul>
+                             
+                            </div>
+
+                            <div class="blog-textsub">
+                                <div class="blog-titlesub">✅Conclusion</div>
+                                <p>Even though there API for scraping the website, it is a best practice to try Python web scraping using Selenium.
+                                     Using Python, we will have better control over what is to be scraped. Also, we don’t need to pay for the API’s. 
+                                     Since the companies are heavily checking on automation bots and blocking it frequently.
+                                    This method is not suggested for creating large datasets.</p>
+                               
+                                
+                                
+                            </div>
+
+                            <div class="blog-textsub">
+                                <div class="blog-titlesub">🧾END</div>
+                                <p>Hope you enjoyed reading and have learned something from this post. Happy coding.</p>
+                                <p>🚀 Cheers to Your Learning Journey!</p>
+                               
+                                
+                                
+                            </div>
+
+
+
+
+
+
 
 
 

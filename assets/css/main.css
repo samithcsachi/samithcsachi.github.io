@@ -1591,7 +1591,7 @@ input[type="radio"] + label:before {
 
 
 
-/*------------Services--------------*/
+------------Services--------------
 #services{
 	display: flex;
 	justify-content: center;
@@ -1610,6 +1610,7 @@ input[type="radio"] + label:before {
 
 
 }
+/*
 
 .services-box{
 	width: 550px;
@@ -1693,7 +1694,7 @@ input[type="radio"] + label:before {
 		padding: 20px;
 
 	}
-}
+}*/
 
 
 
